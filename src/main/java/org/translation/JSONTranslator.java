@@ -70,15 +70,13 @@ public class JSONTranslator implements Translator {
 
     @Override
     public List<String> getCountryLanguages(String country) {
-        // TODO Task: return an appropriate list of language codes,
-        //            but make sure there is no aliasing to a mutable object
-        Map<String, String> languages = data.get(country.toUpperCase());
+        // Ensure country codes match the case in your JSON file
+        Map<String, String> languages = data.get(country.toLowerCase());
         if (languages != null) {
             return new ArrayList<>(languages.keySet());
         }
         return new ArrayList<>();
     }
-
     @Override
     public List<String> getCountries() {
         // TODO Task: return an appropriate list of country codes,
@@ -88,7 +86,7 @@ public class JSONTranslator implements Translator {
 
     @Override
     public String translate(String country, String language) {
-        Map<String, String> translations = data.get(country.toUpperCase());
+        Map<String, String> translations = data.get(country.toLowerCase());
         if (translations != null) {
             return translations.getOrDefault(language, "Translation not available");
         }
