@@ -18,7 +18,6 @@ import org.json.JSONObject;
  */
 public class JSONTranslator implements Translator {
 
-    // TODO Task: pick appropriate instance variables for this class
     private Map<String, Map<String, String>> data;
     private List<String> countries;
     /**
@@ -44,8 +43,6 @@ public class JSONTranslator implements Translator {
 
             JSONArray jsonArray = new JSONArray(jsonString);
 
-            // TODO Task: use the data in the jsonArray to populate your instance variables
-            //            Note: this will likely be one of the most substantial pieces of code you write in this lab.
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject country = jsonArray.getJSONObject(i);
                 String countryName = country.getString("alpha3");
@@ -79,8 +76,7 @@ public class JSONTranslator implements Translator {
     }
     @Override
     public List<String> getCountries() {
-        // TODO Task: return an appropriate list of country codes,
-        //            but make sure there is no aliasing to a mutable object
+
         return new ArrayList<>(countries);
     }
 

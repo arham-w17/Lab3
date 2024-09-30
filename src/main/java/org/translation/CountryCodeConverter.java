@@ -13,7 +13,6 @@ import java.util.Map;
  */
 public class CountryCodeConverter {
     private static Map<String, String> codeToCountry;
-    // TODO Task: pick appropriate instance variable(s) to store the data necessary for this class
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
@@ -35,7 +34,6 @@ public class CountryCodeConverter {
             List<String> lines = Files.readAllLines(Paths.get(getClass()
                     .getClassLoader().getResource(filename).toURI()));
 
-            // TODO Task: use lines to populate the instance variable(s)
             lines.remove(0);
             for (String line : lines) {
                 String[] parts = line.split("\t");
@@ -60,7 +58,6 @@ public class CountryCodeConverter {
      * @return the name of the country corresponding to the code
      */
     public String fromCountryCode(String code) {
-        // TODO Task: update this code to use an instance variable to return the correct value
         return codeToCountry.get(code.toUpperCase());
     }
 
@@ -70,7 +67,6 @@ public class CountryCodeConverter {
      * @return the 3-letter code of the country
      */
     public String fromCountry(String country) {
-        // TODO Task: update this code to use an instance variable to return the correct value
         for (Map.Entry<String, String> entry : codeToCountry.entrySet()) {
             if (entry.getValue().equalsIgnoreCase(country)) {
                 return entry.getKey();
@@ -84,7 +80,6 @@ public class CountryCodeConverter {
      * @return how many countries are included in this code converter.
      */
     public int getNumCountries() {
-        // TODO Task: update this code to use an instance variable to return the correct value
         return codeToCountry.size();
     }
 }
