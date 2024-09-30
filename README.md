@@ -65,9 +65,9 @@ using a different build system, such as Gradle.
 ### Running your code and tests
 Take a second to ensure that you are able to run everything that you need to in the project.
 
-- Confirm that you can run `Main.java`.
+- [X] Confirm that you can run `Main.java`.
 
-- Confirm that you can run the tests by right-clicking the `src/test/java` folder and selecting "Run 'All Tests'".
+- [X] Confirm that you can run the tests by right-clicking the `src/test/java` folder and selecting "Run 'All Tests'".
   Only one test should initially be passing.
 
 Note: these won't do much yet, but we want to know things are working.
